@@ -1,5 +1,6 @@
-ervices:
-  # Django Backend
+
+services:
+  # Django Backend with SQLite
   - type: web
     name: autoweb-backend
     env: python
@@ -15,17 +16,5 @@ ervices:
         generateValue: true
       - key: DEBUG
         value: False
-      - key: DATABASE_URL
-        fromDatabase:
-          name: autoweb-db
-          property: connectionString
     
     autoDeploy: true
-
-  # PostgreSQL Database
-  - type: pgsql
-    name: autoweb-db
-    region: frankfurt
-    plan: free
-    databaseName: autoweb
-    databaseUser: autoweb
