@@ -83,16 +83,16 @@ WSGI_APPLICATION = 'autoweb_backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # Production-ում Render-ի PostgreSQL, development-ում SQLite
-#if os.environ.get('DATABASE_URL'):
-   # DATABASES = {
-   #     'default': dj_database_url.config(
-  #          default=os.environ.get('DATABASE_URL'),
-  #          conn_max_age=600,
-  #          conn_health_checks=True,
-   #     )
-   # }
-#else:
-DATABASES = {
+if os.environ.get('DATABASE_URL'):
+    DATABASES = {
+       'default': dj_database_url.config(
+           default=os.environ.get('DATABASE_URL'),
+          conn_max_age=600,
+          conn_health_checks=True,
+       )
+   }
+else:
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
