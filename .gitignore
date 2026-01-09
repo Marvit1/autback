@@ -1,0 +1,37 @@
+# Python
+*.py[cod]
+*$py.class
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Django
+*.log
+# db.sqlite3 - Չի ignore-ի, որ Render-ում աշխատի
+db.sqlite3-journal
+# Media files - պահպանում ենք, բայց ignore անում ենք upload-ները
+# /media  ← Comment արված, որ media ֆայլերը commit լինեն
+/staticfiles
+/static
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db

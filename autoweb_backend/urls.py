@@ -26,6 +26,9 @@ urlpatterns = [
 
 
 
+# Media files serving (Development և Production-ում)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+else:
+    # Production-ում նույնպես serve անենք media files-ը
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
