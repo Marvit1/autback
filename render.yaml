@@ -1,0 +1,31 @@
+ervices:
+  # Django Backend
+  - type: web
+    name: autoweb-backend
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn autoweb_backend.wsgi:application"
+    
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: DATABASE_URL
+        fromDatabase:
+          name: autoweb-db
+          property: connectionString
+    
+    autoDeploy: true
+
+  # PostgreSQL Database
+  - type: pgsql
+    name: autoweb-db
+    region: frankfurt
+    plan: free
+    databaseName: autoweb
+    databaseUser: autoweb
