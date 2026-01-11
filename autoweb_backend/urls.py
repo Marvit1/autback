@@ -22,13 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('cars.urls')), 
-] 
+]
 
-
-
-# Media files serving (Development և Production-ում)
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-else:
-    # Production-ում նույնպես serve անենք media files-ը
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Media files serving (և՛ Development, և՛ Production)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
