@@ -29,7 +29,10 @@ ALLOWED_HOSTS = [
 # CORS կարգավորումներ
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://auto-35ri.onrender.com",  # Ձեր frontend URL-ը
+    "http://localhost:8000",
+    "https://www.autoswift.shop", 
+    "https://autoswift.shop",       
+    "https://auto-35ri.onrender.com",  
 ]
 
 CORS_ALLOW_CREDENTIALS = True
