@@ -22,7 +22,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '.onrender.com',  # Render-ի համար
-    'https://www.autoswift.shop',
+    'autoswift.shop',  
+    'www.autoswift.shop',
 ]
 
 # CORS կարգավորումներ
